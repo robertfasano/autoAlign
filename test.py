@@ -31,4 +31,4 @@ class TestInstrument(Instrument):
 
 if __name__ == '__main__':
     inst = TestInstrument()
-    inst.host('192.168.0.104:1105')
+    inst.host('192.168.7.2:1105')
