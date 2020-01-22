@@ -2,10 +2,15 @@ import pygame
 
 class IconButton:
     def __init__(self, context, path, x, y, function=None):
+        x *= context.xscale
+        y *= context.yscale
         self.x, self.y = x, y
         self.function = function
         self.img = pygame.image.load(path)
         w, h = self.img.get_size()
+        w = int(w*context.xscale)
+        h = int(h*context.yscale)
+        self.img = pygame.transform.scale(self.img, (w, h))
         context.screen.blit(self.img, (x-w/2, y-w/2))
 
     def is_clicked(self, pos):
@@ -15,6 +20,10 @@ class IconButton:
 
 class Button:
     def __init__(self, context, text, x, y, h, w, c, function=None):
+        x *= context.xscale
+        y *= context.yscale
+        w *= context.xscale
+        h *= context.yscale
         self.x = x
         self.y = y
         self.w = w

@@ -2,6 +2,9 @@ import pygame
 
 class Label:
     def __init__(self, context, text, x, y, fontsize, color, centered=True, justify=None):
+        x *= context.xscale
+        y *= context.yscale
+        fontsize = int(fontsize * context.xscale)
         self.context = context
         self.text = text
         self.color = color

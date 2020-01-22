@@ -11,7 +11,9 @@ class Context:
     yellow  = (255, 255,   0)
     orange  = (255, 127,   0)
 
-    def __init__(self, width=480, height=320, background_color='white'):
+    def __init__(self, width=320, height=240, background_color='white'):
+        self.xscale = width / 480
+        self.yscale = height / 320
         self.background_color = getattr(self, background_color)
         self.screen = pygame.display.set_mode((width, height))
         self.screen.fill(self.background_color)
