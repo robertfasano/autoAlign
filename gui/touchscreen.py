@@ -37,7 +37,7 @@ class Touchscreen:
         return [pos[1], height-pos[0]]
 
     def position(self):
-        raw_position = Touchscreen.parse_event(self.device)
+        raw_position = Touchscreen.parse_events(self.device)
         coords = Touchscreen.to_coords(raw_position, self.height)
         return coords
 
