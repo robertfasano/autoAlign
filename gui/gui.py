@@ -20,9 +20,11 @@ from button import Button, IconButton
 if not args.dev:
     from touchscreen import Touchscreen
     touchscreen = Touchscreen('/dev/input/event0')
-    pygame.mouse.set_visible(False)
 
 pygame.init()
+if not args.dev:
+    pygame.mouse.set_visible(False)
+
 context = Context()
 
 def func1():
