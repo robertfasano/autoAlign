@@ -13,11 +13,9 @@ class IncrementLabel:
         self.parameter = parameter
         fontsize = 80
         Label(context, text, int(x), int(y), fontsize, context.black, centered=False)
-        button_x = int(x+90)
-        button_y = int(y+26)
-        context.add_widget(IconButton(context, "./icons/remove-circle.png", button_x, button_y, self.minus_x))
-        self.value = Label(context, '+200.0', int(x+130), int(y), fontsize, context.black, centered=False)
-        context.add_widget(IconButton(context, "./icons/add-circle.png", int(x+340),int( y+26), self.plus_x))
+        context.add_widget(IconButton(context, "./icons/remove-circle.png", x+120, y+18, self.minus_x, scale=1.25))
+        self.value = Label(context, '+200.0', x+160, y, fontsize, context.black, centered=False)
+        context.add_widget(IconButton(context, "./icons/add-circle.png", x+370, y+18, self.plus_x, scale=1.25))
         self.update(self.parameter.value)
 
     def minus_x(self):
